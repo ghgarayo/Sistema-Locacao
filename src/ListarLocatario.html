@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliária - Listar Locatários</title>
+    <link rel="stylesheet" href="_css/_reset.css">
+    <link rel="stylesheet" href="_css/_styles.css">
+    <script src="_js/_script.js"></script>
+</head>
+
+<header>
+
+    <nav class="navbar">
+        <button onclick="toggleMenu()" class="burger"></button>
+        <button class="button"><a href="index.html">Início</a></button>
+        
+        <div class="dropdowns">
+            <div class="dropdown">
+                <button class="button">
+                    Cadastrar
+                </button>
+                <div class="dropdown-menu">
+                    <button><a href="CadastrarLocatario.html" >Cadastrar
+                            Locatário</a></button>
+                    <button><a href="CadastrarImovel.html">Cadastrar Imóvel</a></button>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="button">
+                    Listar
+                </button>
+                <div class="dropdown-menu">
+                    <button><a href="ListarLocatario.html">Listar Locatário</a></button>
+                    <button><a href="ListarImovel.html">Listar Imóvel</a></button>
+                    <button><a href="ListarLocacao.html">Listar Locação</a></button>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</header>
+
+<body>
+    
+    
+    <div class="listar">
+        <button onclick="listarLocatarios()">Listar Locatário</button>
+    </div>
+    <div class="lista" id="lista-locatarios"> </div>
+</body>
+
+</html>

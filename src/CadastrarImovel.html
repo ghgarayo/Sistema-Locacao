@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Imobiliária - Cadastrar Imóvel</title>
+    <link rel="stylesheet" href="_css/_reset.css">
+    <link rel="stylesheet" href="_css/_styles.css">
+    <script src="_js/_script.js"></script>
+</head>
+
+<header>
+
+    <nav class="navbar">
+        <button onclick="toggleMenu()" class="burger"></button>
+        <button class="button"><a href="index.html">Início</a></button>
+        
+        <div class="dropdowns">
+            <div class="dropdown">
+                <button class="button">
+                    Cadastrar
+                </button>
+                <div class="dropdown-menu">
+                    <button><a href="CadastrarLocatario.html" >Cadastrar
+                            Locatário</a></button>
+                    <button><a href="CadastrarImovel.html">Cadastrar Imóvel</a></button>
+                </div>
+            </div>
+
+            <div class="dropdown">
+                <button class="button">
+                    Listar
+                </button>
+                <div class="dropdown-menu">
+                    <button><a href="ListarLocatario.html">Listar Locatário</a></button>
+                    <button><a href="ListarImovel.html">Listar Imóvel</a></button>
+                    <button><a href="ListarLocacao.html">Listar Locação</a></button>
+                </div>
+            </div>
+
+        </div>
+    </nav>
+
+</header>
+
+
+<body>
+
+    <main class="conteudo">
+
+        <body>
+            <div class="form">
+                <div class="form-imovel">
+                    <input id="endereco" placeholder="Endereço" type="text" />
+                    <input id="numero" placeholder="Número" type="text" />
+                    <input id="complemento" placeholder="Complemento" type="text" />
+                    <input id="bairro" placeholder="Bairro" type="text" />
+                    <input id="cidade" placeholder="Cidade" type="text" />
+                    <input id="estado" placeholder="Estado" type="text" />
+                    <input id="nome-completo-proprietario" placeholder="Nome Completo Proprietário" type="text"/>
+                    <input id="valor-aluguel" placeholder="Valor Aluguel" type="text" />
+                    <button onclick="cadastrarImovel()">Cadastrar Imóvel</button>
+                </div>
+            </div>
+    </main>
+
+    <script>
+        const toggleMenu = () => document.body.classList.toggle("open");
+    </script>
+
+
+</body>
+
+</html>
