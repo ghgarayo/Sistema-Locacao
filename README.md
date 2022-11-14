@@ -11,8 +11,8 @@ Na pasta "src", estarão as páginas html de cadastro e listagem de locatário, 
 
 Alunos do projeto: 
 
-Erickx Willian - 26457270 
-Gustavo Garayo – 27572846
+Erickx Willian - 26457270
+Gustavo Garayo – 27572846 
 Lukas Pereira - 12905097 
 
 Ponto de contato: 
