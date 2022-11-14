@@ -16,5 +16,5 @@ Alunos do projeto:
 - Lukas Pereira - 12905097 
 
 Ponto de contato: 
-Gustavo Garayo - ghgarayo@gmail.com / (41) 99215-2205
+- Gustavo Garayo - ghgarayo@gmail.com / (41) 99215-2205
 
