@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "+5B/kN1oQ5Ii3nWq+KH5t69sAzr3bkHo2ITR7DKUKg5pTe2nSz2SqspNIRW5stOWVCA5p0kWwVSbsvsJjYWSAQ==",
+  "dgSpecHash": "gQ77DDaa+dsmAK8TJ3P+4G1ASS6XMtaFJIJt0RbgkcS4FlYrwZ4sFC4W5PioXGCvrzPFPmVmXeBzHTFsyFc9Yg==",
   "success": true,
-  "projectFilePath": "E:\\Arquivo\\Faculdade\\Desenvolvimento de Software Visual\\SistemaLocacaoFinal\\SistemaLocacaoFinal.csproj",
+  "projectFilePath": "E:\\Portfolio GitHub\\SistemaLocacaoFinal\\SistemaLocacaoFinal.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Gustavo\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",
     "C:\\Users\\Gustavo\\.nuget\\packages\\microsoft.data.sqlite.core\\7.0.0\\microsoft.data.sqlite.core.7.0.0.nupkg.sha512",

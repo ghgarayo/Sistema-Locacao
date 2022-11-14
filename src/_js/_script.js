@@ -294,6 +294,7 @@ function listarLocatarios() {
             divIdImovel.setAttribute("id", "id-imovel;");
             divIdImovel.setAttribute("disabled", "disabled;");
             divIdImovel.placeholder = imovel.id;
+            divIdImovel.style.display = "none";
             divFormLocacao.appendChild(divIdImovel);
   
             let divEmailLocatario = document.createElement("input");

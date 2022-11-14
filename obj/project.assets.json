@@ -1417,11 +1417,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\Arquivo\\Faculdade\\Desenvolvimento de Software Visual\\SistemaLocacaoFinal\\SistemaLocacaoFinal.csproj",
+      "projectUniqueName": "E:\\Portfolio GitHub\\SistemaLocacaoFinal\\SistemaLocacaoFinal.csproj",
       "projectName": "SistemaLocacaoFinal",
-      "projectPath": "E:\\Arquivo\\Faculdade\\Desenvolvimento de Software Visual\\SistemaLocacaoFinal\\SistemaLocacaoFinal.csproj",
+      "projectPath": "E:\\Portfolio GitHub\\SistemaLocacaoFinal\\SistemaLocacaoFinal.csproj",
       "packagesPath": "C:\\Users\\Gustavo\\.nuget\\packages\\",
-      "outputPath": "E:\\Arquivo\\Faculdade\\Desenvolvimento de Software Visual\\SistemaLocacaoFinal\\obj\\",
+      "outputPath": "E:\\Portfolio GitHub\\SistemaLocacaoFinal\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Gustavo\\AppData\\Roaming\\NuGet\\NuGet.Config",

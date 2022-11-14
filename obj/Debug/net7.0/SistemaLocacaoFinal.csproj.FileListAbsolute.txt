@@ -121,3 +121,10 @@ E:\Arquivo\Faculdade\Desenvolvimento de Software Visual\SistemaLocacaoFinal\obj\
 E:\Arquivo\Faculdade\Desenvolvimento de Software Visual\SistemaLocacaoFinal\obj\Debug\net7.0\SistemaLocacaoFinal.pdb
 E:\Arquivo\Faculdade\Desenvolvimento de Software Visual\SistemaLocacaoFinal\obj\Debug\net7.0\SistemaLocacaoFinal.genruntimeconfig.cache
 E:\Arquivo\Faculdade\Desenvolvimento de Software Visual\SistemaLocacaoFinal\obj\Debug\net7.0\ref\SistemaLocacaoFinal.dll
+E:\Portfolio GitHub\SistemaLocacaoFinal\bin\Debug\net7.0\runtimes\alpine-arm\native\libe_sqlite3.so
+E:\Portfolio GitHub\SistemaLocacaoFinal\bin\Debug\net7.0\runtimes\alpine-arm64\native\libe_sqlite3.so
+E:\Portfolio GitHub\SistemaLocacaoFinal\bin\Debug\net7.0\runtimes\browser-wasm\nativeassets\net7.0\e_sqlite3.a
+E:\Portfolio GitHub\SistemaLocacaoFinal\bin\Debug\net7.0\runtimes\linux-musl-arm\native\libe_sqlite3.so
+E:\Portfolio GitHub\SistemaLocacaoFinal\bin\Debug\net7.0\runtimes\linux-musl-arm64\native\libe_sqlite3.so
+E:\Portfolio GitHub\SistemaLocacaoFinal\bin\Debug\net7.0\runtimes\maccatalyst-arm64\native\libe_sqlite3.dylib
+E:\Portfolio GitHub\SistemaLocacaoFinal\bin\Debug\net7.0\runtimes\maccatalyst-x64\native\libe_sqlite3.dylib
