@@ -1,10 +1,6 @@
 const url = "http://localhost:3000/";
 
 function cadastrarLocatario() {
-  //validacao de alguns dos inputs
-  if (!validaNome("nome-completo")) {
-    return;
-  }
 
   //construcao do json que vai no body da criacao de usuario
   let body = {
@@ -169,175 +165,175 @@ function listarLocatarios() {
         divBotoes.appendChild(btnRemover);
         divBotoes.appendChild(btnAtualizar);
         divLocatario.appendChild(divBotoes);
-        
+
         //insere a div do locatario na div com a lista de locatarios
-        
+
         listaLocatarios.appendChild(divLocatario);
       }
     });
-  }
+}
 
-  function listarImoveis() {
-    //da um GET no endpoint "Imoveis"
-    fetch(url + "imovel/lista")
-      .then((response) => response.json())
-      .then((imoveis) => {
-        //pega div que vai conter a lista de locatarios
-        let listaImoveis = document.getElementById("lista-imoveis");
-  
-        //limpa div
-        while (listaImoveis.firstChild) {
-          listaImoveis.removeChild(listaImoveis.firstChild);
-        }
+function listarImoveis() {
+  //da um GET no endpoint "Imoveis"
+  fetch(url + "imovel/lista")
+    .then((response) => response.json())
+    .then((imoveis) => {
+      //pega div que vai conter a lista de locatarios
+      let listaImoveis = document.getElementById("lista-imoveis");
 
-        //preenche div com locatarios recebidos do GET
-        for (let imovel of imoveis) {
-          //cria div para as informacoes de uma div
-          let divImovel = document.createElement("div");
-          divImovel.setAttribute("class", "listas");
-  
-          //pega o ID do imovel
+      //limpa div
+      while (listaImoveis.firstChild) {
+        listaImoveis.removeChild(listaImoveis.firstChild);
+      }
+
+      //preenche div com locatarios recebidos do GET
+      for (let imovel of imoveis) {
+        //cria div para as informacoes de uma div
+        let divImovel = document.createElement("div");
+        divImovel.setAttribute("class", "listas");
+
+        //pega o ID do imovel
+        let divIdImovel = document.createElement("input");
+        divIdImovel.value = imovel.id;
+
+        //console.log(`Id do imóvel é: ${divIdImovel.value}`);
+
+        //pega o endereço
+        let divEndereco = document.createElement("input");
+        divEndereco.placeholder = "Endereço";
+        divEndereco.value = imovel.endereco;
+        divEndereco.setAttribute("class", "nao-editavel");
+        divEndereco.setAttribute("disabled", "disabled");
+        divImovel.appendChild(divEndereco);
+
+        //pega o numero do endereço do imovel
+        let divNumero = document.createElement("input");
+        divNumero.placeholder = "Número";
+        divNumero.value = imovel.numero;
+        divNumero.setAttribute("class", "nao-editavel");
+        divNumero.setAttribute("disabled", "disabled");
+        divImovel.appendChild(divNumero);
+
+        //pega o complemento do endereço do imovel
+        let divComplemento = document.createElement("input");
+        divComplemento.placeholder = "Complemento";
+        divComplemento.value = imovel.complemento;
+        divComplemento.setAttribute("class", "nao-editavel");
+        divComplemento.setAttribute("disabled", "disabled");
+        divImovel.appendChild(divComplemento);
+
+        //pega o Bairro do endereço do imovel
+        let divBairro = document.createElement("input");
+        divBairro.placeholder = "Bairro";
+        divBairro.value = imovel.bairro;
+        divBairro.setAttribute("class", "nao-editavel");
+        divBairro.setAttribute("disabled", "disabled");
+        divImovel.appendChild(divBairro);
+
+        //pega a cidade do imovel
+        let divCidade = document.createElement("input");
+        divCidade.placeholder = "Cidade";
+        divCidade.value = imovel.cidade;
+        divCidade.setAttribute("class", "nao-editavel");
+        divCidade.setAttribute("disabled", "disabled");
+        divImovel.appendChild(divCidade);
+
+        //pega o estado do imovel
+        let divEstado = document.createElement("input");
+        divEstado.placeholder = "Estado";
+        divEstado.value = imovel.estado;
+        divEstado.setAttribute("class", "nao-editavel");
+        divEstado.setAttribute("disabled", "disabled");
+        divImovel.appendChild(divEstado);
+
+        //pega o proprietario do imovel
+        let divProprietario = document.createElement("input");
+        divProprietario.placeholder = "Nome Completo Proprietário";
+        divProprietario.value = imovel.proprietario;
+        divImovel.appendChild(divProprietario);
+
+        //pega o valor do aluguel do imovel
+        let divAluguel = document.createElement("input");
+        divAluguel.placeholder = "Valor Aluguel";
+        divAluguel.value = imovel.valorAluguel;
+        divImovel.appendChild(divAluguel);
+
+        //cria o botao para remover o imovel
+        let btnRemover = document.createElement("button");
+        btnRemover.innerHTML = "Remover";
+        btnRemover.onclick = (u) => removerImovel(imovel.id);
+
+        //cria o botao para atualizar o imovel
+        let btnAtualizar = document.createElement("button");
+        btnAtualizar.innerHTML = "Atualizar";
+        btnAtualizar.onclick = (u) =>
+          atualizarImovel(imovel.id, divProprietario, divAluguel);
+
+        //cria o botao de criar locacao
+        let btnAlugar = document.createElement("button");
+        btnAlugar.innerHTML = "Alugar";
+
+        btnAlugar.onclick = () => {
+          let alugaImovel = document.getElementById("aluga-imovel");
+
+          while (alugaImovel.firstChild) {
+            alugaImovel.removeChild(alugaImovel.firstChild);
+          }
+
+          let divCriaLocacao = document.createElement("div");
+          divCriaLocacao.setAttribute("class", "cadastrar-locacao");
+
+          let divFormLocacao = document.createElement("div");
+          divFormLocacao.setAttribute("class", "form");
+
           let divIdImovel = document.createElement("input");
-          divIdImovel.value = imovel.id;
-  
-          //console.log(`Id do imóvel é: ${divIdImovel.value}`);
-  
-          //pega o endereço
-          let divEndereco = document.createElement("input");
-          divEndereco.placeholder = "Endereço";
-          divEndereco.value = imovel.endereco;
-          divEndereco.setAttribute("class", "nao-editavel");
-          divEndereco.setAttribute("disabled", "disabled");
-          divImovel.appendChild(divEndereco);
-  
-          //pega o numero do endereço do imovel
-          let divNumero = document.createElement("input");
-          divNumero.placeholder = "Número";
-          divNumero.value = imovel.numero;
-          divNumero.setAttribute("class", "nao-editavel");
-          divNumero.setAttribute("disabled", "disabled");
-          divImovel.appendChild(divNumero);
-  
-          //pega o complemento do endereço do imovel
-          let divComplemento = document.createElement("input");
-          divComplemento.placeholder = "Complemento";
-          divComplemento.value = imovel.complemento;
-          divComplemento.setAttribute("class", "nao-editavel");
-          divComplemento.setAttribute("disabled", "disabled");
-          divImovel.appendChild(divComplemento);
-  
-          //pega o Bairro do endereço do imovel
-          let divBairro = document.createElement("input");
-          divBairro.placeholder = "Bairro";
-          divBairro.value = imovel.bairro;
-          divBairro.setAttribute("class", "nao-editavel");
-          divBairro.setAttribute("disabled", "disabled");
-          divImovel.appendChild(divBairro);
-  
-          //pega a cidade do imovel
-          let divCidade = document.createElement("input");
-          divCidade.placeholder = "Cidade";
-          divCidade.value = imovel.cidade;
-          divCidade.setAttribute("class", "nao-editavel");
-          divCidade.setAttribute("disabled", "disabled");
-          divImovel.appendChild(divCidade);
-  
-          //pega o estado do imovel
-          let divEstado = document.createElement("input");
-          divEstado.placeholder = "Estado";
-          divEstado.value = imovel.estado;
-          divEstado.setAttribute("class", "nao-editavel");
-          divEstado.setAttribute("disabled", "disabled");
-          divImovel.appendChild(divEstado);
-  
-          //pega o proprietario do imovel
-          let divProprietario = document.createElement("input");
-          divProprietario.placeholder = "Nome Completo Proprietário";
-          divProprietario.value = imovel.proprietario;
-          divImovel.appendChild(divProprietario);
-  
-          //pega o valor do aluguel do imovel
-          let divAluguel = document.createElement("input");
-          divAluguel.placeholder = "Valor Aluguel";
-          divAluguel.value = imovel.valorAluguel;
-          divImovel.appendChild(divAluguel);
-  
-          //cria o botao para remover o imovel
-          let btnRemover = document.createElement("button");
-          btnRemover.innerHTML = "Remover";
-          btnRemover.onclick = (u) => removerImovel(imovel.id);
-  
-          //cria o botao para atualizar o imovel
-          let btnAtualizar = document.createElement("button");
-          btnAtualizar.innerHTML = "Atualizar";
-          btnAtualizar.onclick = (u) =>
-            atualizarImovel(imovel.id, divProprietario, divAluguel);
-  
-          //cria o botao de criar locacao
-          let btnAlugar = document.createElement("button");
-          btnAlugar.innerHTML = "Alugar";
-  
-          btnAlugar.onclick = () => {
-            let alugaImovel = document.getElementById("aluga-imovel");
-  
-            while (alugaImovel.firstChild) {
-              alugaImovel.removeChild(alugaImovel.firstChild);
-            }
-  
-            let divCriaLocacao = document.createElement("div");
-            divCriaLocacao.setAttribute("class", "cadastrar-locacao");
-  
-            let divFormLocacao = document.createElement("div");
-            divFormLocacao.setAttribute("class", "form");
-  
-            let divIdImovel = document.createElement("input");
-            divIdImovel.setAttribute("id", "id-imovel;");
-            divIdImovel.setAttribute("disabled", "disabled;");
-            divIdImovel.placeholder = imovel.id;
-            divIdImovel.style.display = "none";
-            divFormLocacao.appendChild(divIdImovel);
-  
-            let divEmailLocatario = document.createElement("input");
-            divEmailLocatario.setAttribute("type", "text");
-            divEmailLocatario.setAttribute("id", "email-locatario");
-            divEmailLocatario.placeholder = "E-mail do Locatário";
-            divFormLocacao.appendChild(divEmailLocatario);
-  
-            let divDataLocacao = document.createElement("input");
-            divDataLocacao.setAttribute("id", "data-locacao");
-            divDataLocacao.placeholder = "Data de Locação";
-            divFormLocacao.appendChild(divDataLocacao);
-  
-            let divTempoContrato = document.createElement("input");
-            divTempoContrato.setAttribute("id", "tempo-contrato");
-            divTempoContrato.placeholder = "Duração da Locação";
-            divFormLocacao.appendChild(divTempoContrato);
-  
-            let btnAlugarImovel = document.createElement("button");
-            btnAlugarImovel.innerHTML = "Alugar Imóvel";
-            btnAlugarImovel.onclick = () => cadastrarLocacao(imovel.id);
-  
-            divFormLocacao.appendChild(btnAlugarImovel);
-            divCriaLocacao.appendChild(divFormLocacao);
-            alugaImovel.appendChild(divCriaLocacao);
-          };
-  
-          //cria a div com os dois botoes
-          let divBotoes = document.createElement("div");
-          divBotoes.style.display = "flex";
-          divBotoes.appendChild(btnAlugar);
-          divBotoes.appendChild(btnAtualizar);
-          divBotoes.appendChild(btnRemover);
-          divImovel.appendChild(divBotoes);
-  
-          //insere a div do imovel na div com a lista de imovels
-          
-          listaImoveis.appendChild(divImovel);
-        }
-      });
-  }
-  
-  function listarLocacoes() {
+          divIdImovel.setAttribute("id", "id-imovel;");
+          divIdImovel.setAttribute("disabled", "disabled;");
+          divIdImovel.placeholder = imovel.id;
+          divIdImovel.style.display = "none";
+          divFormLocacao.appendChild(divIdImovel);
+
+          let divEmailLocatario = document.createElement("input");
+          divEmailLocatario.setAttribute("type", "text");
+          divEmailLocatario.setAttribute("id", "email-locatario");
+          divEmailLocatario.placeholder = "E-mail do Locatário";
+          divFormLocacao.appendChild(divEmailLocatario);
+
+          let divDataLocacao = document.createElement("input");
+          divDataLocacao.setAttribute("id", "data-locacao");
+          divDataLocacao.placeholder = "Data de Locação";
+          divFormLocacao.appendChild(divDataLocacao);
+
+          let divTempoContrato = document.createElement("input");
+          divTempoContrato.setAttribute("id", "tempo-contrato");
+          divTempoContrato.placeholder = "Duração da Locação";
+          divFormLocacao.appendChild(divTempoContrato);
+
+          let btnAlugarImovel = document.createElement("button");
+          btnAlugarImovel.innerHTML = "Alugar Imóvel";
+          btnAlugarImovel.onclick = () => cadastrarLocacao(imovel.id);
+
+          divFormLocacao.appendChild(btnAlugarImovel);
+          divCriaLocacao.appendChild(divFormLocacao);
+          alugaImovel.appendChild(divCriaLocacao);
+        };
+
+        //cria a div com os dois botoes
+        let divBotoes = document.createElement("div");
+        divBotoes.style.display = "flex";
+        divBotoes.appendChild(btnAlugar);
+        divBotoes.appendChild(btnAtualizar);
+        divBotoes.appendChild(btnRemover);
+        divImovel.appendChild(divBotoes);
+
+        //insere a div do imovel na div com a lista de imovels
+
+        listaImoveis.appendChild(divImovel);
+      }
+    });
+}
+
+function listarLocacoes() {
   //da um GET no endpoint "Locacoes"
   fetch(url + "locacao/lista")
     .then((response) => response.json())
@@ -362,16 +358,7 @@ function listarLocatarios() {
         divIdLocacao.value = locacao.id;
         divIdLocacao.setAttribute("class", "nao-editavel");
         divIdLocacao.setAttribute("disabled", "disabled");
-        
         divLocacao.appendChild(divIdLocacao);
-
-        let divNomeLocatario = document.createElement("input");
-        divNomeLocatario.placeholder = "Nome do Locatário";
-        divNomeLocatario.value = retornaNomeLocatario(locacao);
-        console.log("Div Nome Locatario: " + divNomeLocatario.value);
-        divNomeLocatario.setAttribute("class", "nao-editavel");
-        divNomeLocatario.setAttribute("disabled", "disabled");
-        divLocacao.appendChild(divNomeLocatario);
 
         //pega o email do locatario
         let divEmailLocacao = document.createElement("input");
@@ -490,15 +477,13 @@ function atualizarImovel(id, divProprietario, divAluguel) {
     });
 }
 
-
 function atualizarLocacao(id, divDuracaoLocacao, divDataLocacao) {
-  
-  console.log(divDuracaoLocacao.value)
-  console.log(divDataLocacao.value)
-  
+  console.log(divDuracaoLocacao.value);
+  console.log(divDataLocacao.value);
+
   let body = {
     tempoContrato: divDuracaoLocacao.value,
-    dataLocacao: divDataLocacao.value
+    dataLocacao: divDataLocacao.value,
   };
 
   console.log(body);
@@ -597,18 +582,3 @@ function removerLocacao(id) {
     });
 }
 
-function retornaNomeLocatario(locacao) {
-  
-  console.log(locacao.emailLocatario);
-  fetch(url + "locatario/lista")
-    .then((response) => response.json())
-    .then((locatarios) => {
-      for (let locatario of locatarios) {
-        if(locacao.emailLocatario == locatario.email)
-        {
-          console.log(locatario.nome);
-          return locatario.nome;
-        }
-      }
-    }); 
-}
